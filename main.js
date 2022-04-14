@@ -129,6 +129,7 @@ function innerFetchedText () {
 
 innerFetchedText();
 
+// Eigene Elemente erstellen
 class MyCustomElement extends HTMLElement {
     constructor() { // Was ist ein Constructor?
         super();
@@ -136,6 +137,7 @@ class MyCustomElement extends HTMLElement {
         <h3>
             Mein erstes eigenes HTML-Element
         </h3>
+        <p>Und hier steht noch Text</p>
         `
     }
 }
