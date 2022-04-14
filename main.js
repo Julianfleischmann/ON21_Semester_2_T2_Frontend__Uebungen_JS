@@ -128,3 +128,15 @@ function innerFetchedText () {
 }
 
 innerFetchedText();
+
+class MyCustomElement extends HTMLElement {
+    constructor() { // Was ist ein Constructor?
+        super();
+        this.innerHTML = `
+        <h3>
+            Mein erstes eigenes HTML-Element
+        </h3>
+        `
+    }
+}
+customElements.define("my-custom-element", MyCustomElement);
