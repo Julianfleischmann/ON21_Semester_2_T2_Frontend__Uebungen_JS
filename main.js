@@ -142,3 +142,17 @@ class MyCustomElement extends HTMLElement {
     }
 }
 customElements.define("my-custom-element", MyCustomElement);
+
+// Element mit Attribute-Aufruf
+class MyCustomAttribute extends HTMLElement {
+    constructor() { // Was ist ein Constructor?
+        super(); // Extendet das HTMLElement Class
+        this.innerHTML = `
+        <h3>
+            Mein erstes eigenes <strong>Custom-Element mit Attribut-Aufruf</strong>
+        </h3>
+        <p>Das Attribut wurde erstellt von ${this.getAttribute('name')}</p>
+        `;
+    }
+}
+customElements.define("my-custom-attribute", MyCustomAttribute);
