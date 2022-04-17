@@ -132,13 +132,13 @@ innerFetchedText();
 // Eigene Elemente erstellen
 class MyCustomElement extends HTMLElement {
     constructor() { // Was ist ein Constructor?
-        super();
+        super(); // Extendet das HTMLElement Class
         this.innerHTML = `
         <h3>
-            Mein erstes eigenes HTML-Element
+            Mein erstes eigenes <strong>Custom-Element</strong>
         </h3>
         <p>Und hier steht noch Text</p>
-        `
+        `;
     }
 }
 customElements.define("my-custom-element", MyCustomElement);
