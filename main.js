@@ -165,7 +165,6 @@ myCustomTemplate.innerHTML = `
     <p></p>
 </div>
 `;
-
 class MyCustomTemplate extends HTMLElement {
     constructor() {
         super();
@@ -176,5 +175,18 @@ class MyCustomTemplate extends HTMLElement {
         // this.innerHTML = ``;
     }
 }
-
 customElements.define("my-custom-template", MyCustomTemplate);
+
+// Slot Element
+class MyCustomSlotElement extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+        this.shadowRoot.innerHTML = `
+            <h2>Hier Steht was</h2>
+            <span><slot name="headline"></slot></span>
+            <span><slot name="content"></slot></span>
+        `;
+    }
+}
+customElements.define("my-custom-slot", MyCustomSlotElement);
