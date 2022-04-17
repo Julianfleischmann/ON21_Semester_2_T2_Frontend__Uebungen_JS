@@ -156,3 +156,25 @@ class MyCustomAttribute extends HTMLElement {
     }
 }
 customElements.define("my-custom-attribute", MyCustomAttribute);
+
+// Element mit Template
+const myCustomTemplate = document.createElement('template');
+myCustomTemplate.innerHTML = `
+<div class="my-custom-template">
+    <h3></h3>
+    <p></p>
+</div>
+`;
+
+class MyCustomTemplate extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+        this.shadowRoot.appendChild(myCustomTemplate.content.cloneNode(true));
+        this.shadowRoot.querySelector('h3').innerText = this.getAttribute('headline');
+        this.shadowRoot.querySelector('p').innerText = this.getAttribute('content');
+        // this.innerHTML = ``;
+    }
+}
+
+customElements.define("my-custom-template", MyCustomTemplate);
